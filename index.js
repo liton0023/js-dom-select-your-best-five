@@ -4,7 +4,12 @@ document.getElementById('select-player').addEventListener('click',function(){
     const playerList1=player1.innerText;
 
     const selectedPlayer=document.getElementById('player-list');
-    selectedPlayer.innerText=playerList1;
+
+    
+    const createElement=document.createElement('p');
+
+   createElement.innerHTML=playerList1;
+   selectedPlayer.appendChild(createElement)
 
     console.log(selectedPlayer);
 
