@@ -20,7 +20,7 @@ const inputFild=document.getElementById('per-player-input');
 const inputvalue=inputFild.value;
 // console.log(inputvalue)
 
-const playerCost=playerNumber*inputvalue;
+const playerCost=5*inputvalue;
 // console.log(playerCost)
     
 const playerExpence=document.getElementById('player-expence');
