@@ -19,6 +19,11 @@ const inputFild=document.getElementById('per-player-input');
 const inputvalue=inputFild.value;
 // console.log(inputvalue)
 
+if (isNaN(inputvalue)) {
+    alert('Insert Number Please !!')
+    return
+}
+
 const playerCost=playerNumber * inputvalue;
 // console.log(playerCost)
     
