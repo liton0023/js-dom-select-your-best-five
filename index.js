@@ -1,31 +1,25 @@
-document.getElementById('select-player').addEventListener('click',function(){
-    // console.log('clicked')
-    const player1=document.getElementById('player-name-1');
-    const playerList1=player1.innerText;
 
-    const selectedPlayer=document.getElementById('player-list');
-
-    
-    const createElement=document.createElement('p');
-
-   createElement.innerHTML=playerList1;
-   selectedPlayer.appendChild(createElement)
-
-    console.log(selectedPlayer);
-
-})
 
 document.getElementById('calculate-btn').addEventListener('click',function(){
+
+    console.log('clicked')
 const selectPlayer=document.getElementById('player-list');
 const playerList=selectPlayer.innerText;
-const playerNumber=parseFloat(playerList);
+console.log(playerList)
+
+const playerNumber = selectPlayer.childNodes.length
+if(playerNumber < 5){
+    alert('Plz add minemum 5 players')
+    return
+}
+
 
 
 const inputFild=document.getElementById('per-player-input');
 const inputvalue=inputFild.value;
 // console.log(inputvalue)
 
-const playerCost=5*inputvalue;
+const playerCost=playerNumber * inputvalue;
 // console.log(playerCost)
     
 const playerExpence=document.getElementById('player-expence');
@@ -34,6 +28,7 @@ inputFild.value='';
 
 
 })
+
 
 document.getElementById('total-calculate-btn').addEventListener('click',function(){
     const playerExpence=document.getElementById('player-expence');
@@ -56,4 +51,28 @@ document.getElementById('total-calculate-btn').addEventListener('click',function
     mangerInput.value='';
     coachInput.value='';
 })
+
+
+const players=document.querySelectorAll('.card-body');
+
+for (let player of players){
+
+const selectBtn=player.childNodes[5];
+const selectedPlayer=document.getElementById('player-list');
+const createElement=document.createElement('p');
+
+selectBtn.addEventListener('click',function(){
+    const playerName=player.childNodes[1].innerText;
+    createElement.innerText=playerName;
+    selectedPlayer.appendChild(createElement);
+   
+    console.log(playerName)
+})
+    // console.log(selectBtn);
+}
+
+// console.log(players);
+
+
+
 
